@@ -1,0 +1,944 @@
+/* 博学谷官网首页的样式文件 */
+/* 导航 */
+.nav {
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 2px 20px 0 rgba(212, 219, 230, 0.38);
+}
+
+.nav .wrapper {
+    position: relative;
+    height: 60px;
+}
+
+/* 利用子代选择器选择离category标签最近的li，以免造成对非子代li造成影响 */
+.nav .category>li {
+    position: relative;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 25px;
+}
+
+.nav .category>li:first-child {
+    padding-left: 0;
+}
+
+/*
+ 利用伪元素实现，默认是行内元素，故需转换元素的显示模式才可设置宽高
+ 利用子绝父相，定位到该li标签的右上角
+*/
+.nav .category>li:last-child::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 27px;
+    height: 15px;
+    background-image: url(../images/new_whitebgd.gif);
+
+}
+
+.nav .active {
+    color: #FF7900;
+}
+
+.nav .category li>span {
+    display: block;
+    height: 60px;
+    font-family: 'PingFangSC-Regular';
+    cursor: pointer;
+}
+
+.nav .category li>span:hover {
+    color: #FF7900;
+
+}
+
+
+
+/* 导航栏 鼠标悬停在category标签上时显示的细节 */
+.nav .common {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 140px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.nav .common li {
+    position: relative;
+    width: 140px;
+    height: 30px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* 
+    1、hover伪类选择器+元素表选后面邻近的兄弟元素 
+    2、悬停在common中的li时，字体会变橙色
+*/
+.nav .common:hover+span,
+.nav .common li:hover a {
+    color: #FF7900;
+}
+
+.nav .detail_1,
+.nav .detail_2,
+.nav .detail_3,
+.nav .detail_4 {
+    display: none;
+}
+
+.nav .category>li:hover .detail_1,
+.nav .category>li:hover .detail_2,
+.nav .category>li:hover .detail_3,
+.nav .category>li:hover .detail_4 {
+    display: block;
+}
+
+/* 为导航栏第4个li中的ul添加伪类元素 */
+.nav .detail_4::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    right: 15px;
+    width: 27px;
+    height: 15px;
+    background-image: url(../images/new_whitebgd.gif);
+}
+
+
+.nav .vip {
+    display: inline-block;
+    width: 115px;
+    height: 23px;
+    margin: 17px 0 20px 45px;
+    background: transparent url(../images/vip.gif) no-repeat center/cover;
+}
+
+.nav .Active_time_machine {
+    float: right;
+    display: inline-block;
+    width: 108px;
+    height: 50px;
+    margin: 2px 30px 1px 0;
+    background: transparent url(../images/time.gif) no-repeat center/cover;
+    ;
+}
+
+.nav .download {
+    position: relative;
+    float: right;
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav p {
+    height: 18px;
+    margin: 21px 0;
+    padding-left: 30px;
+    color: #656E79;
+    font-size: 18px;
+    line-height: 18px;
+    border-left: 1px solid #d8d8d8;
+}
+
+/* 当download这个a标签被hover之后，让downcode显示 */
+.nav .download:hover .downcode {
+    display: block;
+    z-index: 1;
+}
+
+.nav .downcode {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 130px;
+    height: 130px;
+}
+
+/* banner */
+.banner {
+    height: 450px;
+    background-color: #264ADA;
+}
+
+.banner .wrapper {
+    height: 450px;
+    background: transparent url(../uploads/banner.jpg) no-repeat 200px center;
+}
+
+.banner .left {
+    float: left;
+    width: 200px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.banner .right {
+    float: right;
+    width: 300px;
+    height: 450px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+
+}
+
+/* bannner 左侧栏 每个li高为45px */
+.banner .left li {
+    height: 45px;
+    padding: 0 30px;
+    line-height: 45px;
+
+}
+
+.banner .left a {
+    color: #fff;
+}
+
+.banner .left span {
+    display: none;
+    color: #fff;
+    float: right;
+}
+
+/* 
+    鼠标悬停在li标签上时，显示背景颜色和span标签，
+    li的padding-left增加18px,padding-right减少10px 
+    同时利用transition添加过度效果
+    */
+.banner .left li:hover {
+    padding: 0 20px 0 48px;
+    background-color: #FF7900;
+    transition: all 1s;
+
+}
+
+.banner .left li:hover span {
+    display: block;
+}
+
+/* banner 右侧栏 分为title和content两部分*/
+.banner .right .title {
+    height: 40px;
+    padding: 0 12px;
+    background-color: rgba(0, 0, 0, .3);
+    line-height: 40px;
+
+}
+
+.banner .title li {
+    float: left;
+    height: 40px;
+    width: 92px;
+    padding: 0 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.banner .title a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    border-bottom: 0;
+}
+
+.banner .title a:hover {
+    border-bottom: 1px solid #FF7900;
+}
+
+.banner .content {
+    padding: 0 30px;
+}
+
+.banner .content ul {
+    list-style: disc;
+    font-size: 13px;
+}
+
+.banner .content a {
+    height: 41px;
+    color: #fff;
+    line-height: 41px;
+}
+
+.banner .content a:hover {
+    color: #FF7900;
+}
+
+.content {
+    color: #fff;
+}
+
+/* 次导航 */
+.secondary_nav {
+    height: 90px;
+    background-color: #191E26;
+}
+
+.secondary_nav .wrapper {
+    height: 90px;
+}
+
+.secondary_nav li {
+    position: relative;
+    float: left;
+    width: 307px;
+    height: 90px;
+    margin-right: 44px;
+    font-size: 18px;
+}
+
+.secondary_nav li:last-child {
+    margin-right: 0;
+}
+
+.secondary_nav .img {
+    position: absolute;
+    left: 30%;
+    width: 60px;
+    height: 60px;
+}
+
+.secondary_nav span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.secondary_nav span:last-child {
+    left: 162px;
+}
+
+.secondary_nav a {
+    display: block;
+    width: 307px;
+    height: 90px;
+    color: #fff;
+}
+
+.secondary_nav img {
+    margin: 15px 10px 15px 92px;
+}
+
+/* 为类名为.img的span标签设置背景图片 */
+.secondary_nav li:first-child .img {
+    background-image: url(../images/bgicon1.png);
+}
+
+.secondary_nav li:nth-child(2) .img {
+    background-image: url(../images/bgicon2.png);
+}
+
+.secondary_nav li:nth-child(3) .img {
+    background-image: url(../images/bgicon3.png);
+}
+
+.secondary_nav li:last-child .img {
+    background-image: url(../images/bgicon4.png);
+}
+
+/* 鼠标悬停在次导航时，图标替换为动态的图标 */
+.secondary_nav li:first-child:hover .img {
+    background-image: url(../images/bgicon1.gif);
+}
+
+.secondary_nav li:nth-child(2):hover .img {
+    background-image: url(../images/bgicon2.gif);
+}
+
+.secondary_nav li:nth-child(3):hover .img {
+    background-image: url(../images/bgicon3.gif);
+}
+
+.secondary_nav li:last-child:hover .img {
+    background-image: url(../images/bgicon4.gif);
+}
+
+.secondary_nav li:hover {
+    background-color: #FF7900;
+}
+
+.secondary_nav li:nth-child(2) {
+    background-color: #FF7900;
+}
+
+
+
+/*交互实验室/职业体系/热销课程/热门就业班/推荐讲师/传智旗下品牌 的title盒子的样式 */
+.title_common {
+    margin-top: 20px;
+}
+
+.title_common .title {
+    height: 85px;
+}
+
+.title_common .title a {
+    display: block;
+    height: 25px;
+}
+
+.title_common .title li {
+    float: left;
+    height: 25px;
+    margin: 30px 0;
+    padding: 0 17px 0 0;
+    font: 25px/25px 'PingFangSC-Regular';
+}
+
+.occupational_system .title li:nth-child(2) a,
+.popular_course .title li:nth-child(2) a {
+    color: #999;
+    padding-left: 17px;
+    border-left: 1px solid #999;
+}
+
+.title_common .title .more {
+    float: right;
+    height: 85px;
+    font: 16px;
+    color: #8B8A8B;
+    line-height: 85px;
+
+}
+
+/* 职业体系/热销课程/热门就业班/推荐讲师/传智旗下品牌 
+的content盒子中去除最外层li中靠近最右侧的li的右外边距 */
+.occupational_system .content li:nth-child(4n),
+.popular_course .content li:nth-child(4n),
+.popular_employment_class .box>li:nth-child(2n),
+.recommended_lecturer .content .box>li:nth-child(4n),
+.brand_of_Chuanzhi .content li:nth-child(6n) {
+    margin-right: 0;
+}
+
+
+/* 交互实验室 主体部分*/
+
+.interactive_lab .content {
+    position: relative;
+    height: 394px;
+    background: transparent url(../images/lightning_bg.gif) no-repeat center/cover;
+}
+
+.interactive_lab .content li {
+    position: absolute;
+    float: left;
+    width: 202px;
+    height: 112px;
+    padding: 14px 14px 30px 14px;
+    background-image: url(../images/lightning.png);
+}
+
+.interactive_lab .content li a {
+    display: inline-block;
+    width: 172px;
+}
+
+.lightning {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 202px;
+    height: 112px;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+    background-image: url(../images/lightning1.png);
+}
+
+.interactive_lab .content li:hover .lightning {
+    display: block;
+}
+
+.interactive_lab .content li:first-child {
+    top: 50px;
+    left: 36px;
+}
+
+.interactive_lab .content li:nth-child(2) {
+    top: 142px;
+    left: 176px;
+}
+
+.interactive_lab .content li:nth-child(3) {
+    top: 168px;
+    left: 374px;
+}
+
+.interactive_lab .content li:nth-child(4) {
+    top: 156px;
+    left: 802px;
+}
+
+.interactive_lab .content li:nth-child(5) {
+    top: 70px;
+    left: 968px;
+}
+
+.interactive_lab .content li:nth-child(6) {
+    top: 144px;
+    left: 1156px;
+}
+
+.interactive_lab .content li img {
+    margin: 10px;
+}
+
+.interactive_lab .content li span {
+    position: absolute;
+    top: 42px;
+    left: 40px;
+    font-size: 14px;
+    color: #3DCDCA;
+}
+
+.interactive_lab .content li h2 {
+    position: absolute;
+    top: 32px;
+    left: 92px;
+    width: 78px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #9E9E9E;
+}
+
+.interactive_lab .content li:nth-child(4) p,
+.interactive_lab .content li:nth-child(6) p {
+    top: 40px;
+}
+
+.interactive_lab .content li:first-child span {
+    color: #F72B58;
+}
+
+/* 职业体系 主体部分 */
+.occupational_system .content li {
+    float: left;
+    width: 310px;
+    height: 290px;
+    margin-right: 40px;
+    padding: 24px 51px;
+    border: 1px solid #EFEFEF;
+    border-radius: 10px;
+}
+
+.occupational_system h2 {
+    height: 56px;
+    font: normal 400 16px/56px 'PingFangSC-Regular';
+    margin: 0 auto;
+    color: #8B8A8B;
+    text-align: center;
+}
+
+.occupational_system .content a {
+    display: block;
+    width: 160px;
+    height: 42px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 42px;
+    color: #FE933A;
+    border: 1px solid #FE933A;
+    border-radius: 1px;
+}
+
+.occupational_system .content a:hover {
+    color: #fff;
+    background-color: #FE933A;
+}
+
+/* 热销课程 主体部分 */
+.popular_course .content li {
+    float: left;
+    width: 310px;
+    height: 230px;
+    margin-right: 40px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.popular_course .content img {
+    width: 310px;
+    height: 160px;
+}
+
+.popular_course .content .info {
+    height: 70px;
+    padding: 12px 15px 15px;
+}
+
+.popular_course .content .info h2 {
+    font: normal 400 16px 'PingFangSC-Regular';
+    margin: 0;
+    color: #2C2C40;
+}
+
+.popular_course .content .info .price {
+    float: left;
+    margin-top: 4px;
+    transform: translateX(-6%);
+    font-size: 14px;
+    color: #FE933A;
+}
+
+.popular_course .content .info .nums {
+    float: right;
+    width: 72px;
+    text-align: right;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #ABAFBD;
+    background: transparent url(../images/热销课程-人数.png) no-repeat left center;
+}
+
+/* 热门就业班 主体部分 */
+.popular_employment_class .box>li {
+    float: left;
+    width: 660px;
+    height: 258px;
+    margin-right: 40px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.popular_employment_class .product {
+    position: relative;
+    display: block;
+    height: 138px;
+}
+
+/* 鼠标悬停在.box图片上时，显示遮罩层 */
+.popular_employment_class .mask {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 138px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+
+}
+
+.popular_employment_class .mask span {
+    position: absolute;
+    display: inline-block;
+    top: 60%;
+    left: 50%;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #FE933A;
+    border: 1px solid #FE933A;
+    border-radius: 2px;
+
+    transform: translateX(-50%);
+}
+
+.popular_employment_class .product:hover .mask {
+    display: block;
+}
+
+.popular_employment_class .box img {
+    width: 660px;
+    height: 138px;
+}
+
+
+/* 
+    1.小图标作为li标签的背景，然后通过background-position属性调节其位置。
+    2.而小图标下方的文字的位置则通过行高来调节。
+    3.每个li的高度给出，而宽度不给，直接由文字撑开。
+    4.每个li的距离则通过margin来调节
+*/
+.popular_employment_class .info li {
+    float: left;
+    height: 120px;
+    font-size: 18px;
+    line-height: 162px;
+    text-align: center;
+    background-color: pink;
+}
+
+.popular_employment_class .info a {
+    display: block;
+    height: 120px;
+}
+
+.popular_employment_class .info a:hover {
+    color: #FE933A;
+}
+
+.popular_employment_class .info1 li {
+    margin: 0 2px 0 40px;
+}
+
+.popular_employment_class .info2 li {
+    margin: 0 56px 0 40px;
+}
+
+.popular_employment_class .info1 li:nth-child(1) {
+    background: url(../images/school3.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info1 li:nth-child(2) {
+    background: url(../images/school4.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info1 li:nth-child(3) {
+    background: url(../images/school5.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info1 li:nth-child(4) {
+    background: url(../images/school6.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info2 li:nth-child(1) {
+    background: url(../images/school7.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info2 li:nth-child(2) {
+    background: url(../images/school8.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info2 li:nth-child(3) {
+    background: url(../images/school9.png) no-repeat center 21px;
+}
+
+.popular_employment_class .info2 li:nth-child(4) {
+    background: url(../images/school10.png) no-repeat center 21px;
+}
+
+/* 推荐讲师 主体部分 */
+.recommended_lecturer .content .box>li {
+    float: left;
+    width: 268px;
+    height: 178px;
+    margin-right: 96px;
+    color: #999;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+
+.recommended_lecturer .teacher_card {
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+
+.recommended_lecturer .teacher_card .photo {
+    float: left;
+}
+
+.recommended_lecturer .teacher_card .introduce {
+    float: left;
+    width: 188px;
+    height: 80px;
+    padding: 14px 0 14px 15px;
+}
+
+.recommended_lecturer .teacher_card .introduce span:first-child {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 
+    1.利用伪元素为教师图片右下角添加小图标
+    2.伪元素创建的元素默认是行内元素，而行内元素宽高设置无效，需转换为行内块或者块元素
+    3.利用子绝父相定位到相应的位置
+*/
+.recommended_lecturer .teacher_card::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 54px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/attension_no.png);
+}
+
+.recommended_lecturer .subject h2 {
+    margin-top: 20px;
+    padding: 18px 0;
+    font-weight: 400;
+    font-size: 14px;
+    border-top: 2px solid #efefef;
+}
+
+.recommended_lecturer .subject .score {
+    float: left;
+    margin-right: 10px;
+}
+
+.recommended_lecturer .subject .star {
+    float: left;
+    margin-top: 4px;
+}
+
+.recommended_lecturer .subject .star li {
+    float: left;
+    display: inline;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    background-image: url(../images/star.png);
+}
+
+
+
+.recommended_lecturer .subject .concern {
+    float: right;
+}
+
+
+
+/* 传智旗下品牌 主体部分*/
+.brand_of_Chuanzhi .content {
+    width: 100%;
+    height: 100px;
+    padding: 22px 29px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+
+.brand_of_Chuanzhi .content a {
+    display: block;
+    height: 100px;
+}
+
+.brand_of_Chuanzhi .content li {
+    float: left;
+    margin-right: 20px;
+}
+
+/* 底部 */
+/* .footer {
+    height: 266px;
+    margin-top: 100px;
+    background-color: #2C3034;
+}
+
+
+.footer .upside {
+    position: relative;
+    height: 142px;
+    border-bottom: 2px solid #4D525A;
+
+}
+
+.footer .below {
+    position: relative;
+    color: #97979C;
+}
+
+.footer .upside .icon {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 35px;
+}
+
+.footer .upside .icon a:last-child {
+    float: right;
+}
+
+.footer .upside ul {
+    position: absolute;
+    width: 924px;
+    top: 95px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.footer .upside li {
+    float: left;
+    margin-right: 40px;
+}
+
+.footer .upside li a {
+    color: #fff;
+}
+
+.footer .upside li:last-child {
+    margin-right: 0;
+}
+
+.footer .below h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.footer .below p {
+    margin: 4px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer .below ul {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.footer .below li {
+    float: left;
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.footer .below li:last-child {
+    margin-right: 0;
+} */
+
+/* 侧边导航栏 */
+.side_nav {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 504px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.04);
+    border-radius: 8px 0 0 8px;
+}
+
+.side_nav ul {
+    padding: 0 12px;
+}
+
+.side_nav li {
+    padding: 18px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.side_nav li a {
+    color: #888;
+
+}
+
+.side_nav li:last-child {
+    border-bottom: 0;
+}

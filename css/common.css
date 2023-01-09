@@ -1,0 +1,146 @@
+/* 博学谷官网多个网页相同模块的重复样式：头部、尾部 */
+/* 版心 */
+.wrapper {
+    width: 1360px;
+    margin: 0 auto;
+}
+
+/* 网页头部 */
+.header {
+    height: 60px;
+    background-color: #252B31;
+    box-shadow: 0 2px 20px 0 rgba(212, 219, 230, 0.38);
+}
+
+.header .wrapper {
+    height: 60px;
+    line-height: 60px;
+}
+
+/* logo */
+.header .logo {
+    float: left;
+    width: 121px;
+    height: 60px;
+}
+
+.header .logo h1 {
+    width: 121px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.header h1 a {
+    display: block;
+    width: 121px;
+    height: 60px;
+    background: transparent url(../images/logo-2.png) no-repeat center/contain;
+    font-size: 0;
+}
+
+/* 登录/注册  */
+.header .login_sign {
+    float: right;
+    height: 60px;
+}
+
+.header .login_sign a {
+    display: inline-block;
+    margin: 15px 0 15px 20px;
+    width: 88px;
+    height: 28px;
+    color: #fff;
+    font: normal 400 15px 'PingFangSC-Regular';
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.header .login_sign a:hover {
+    background-color: #EF8220;
+    border-color: #EF8220;
+}
+
+/* 底部 */
+.footer {
+    height: 266px;
+    margin-top: 100px;
+    background-color: #2C3034;
+}
+
+
+.footer .upside {
+    position: relative;
+    height: 142px;
+    border-bottom: 2px solid #4D525A;
+
+}
+
+.footer .below {
+    position: relative;
+    color: #97979C;
+}
+
+.footer .upside .icon {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 35px;
+}
+
+.footer .upside .icon a:last-child {
+    float: right;
+}
+
+.footer .upside ul {
+    position: absolute;
+    width: 924px;
+    top: 95px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.footer .upside li {
+    float: left;
+    margin-right: 40px;
+}
+
+.footer .upside li a {
+    color: #fff;
+}
+
+.footer .upside li:last-child {
+    margin-right: 0;
+}
+
+.footer .below h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.footer .below p {
+    margin: 4px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer .below ul {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.footer .below li {
+    float: left;
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.footer .below li:last-child {
+    margin-right: 0;
+}
